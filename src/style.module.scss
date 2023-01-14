@@ -11,7 +11,7 @@ $yellow: #FFF9B0;
 $orange: #FFD384;
 $orange-dark: #FF884B;
 $pink: #FF577F;
-$pink-light: #ff9ab2;
+$primary-color: #ff9ab2;
 
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
@@ -40,41 +40,6 @@ $line-height-base: 1.5;
 $font-weight-bold: 700;
 
 
-
-@mixin flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-@mixin flex-row-center {
-    @include flex-row;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin small-only {
-    @media (max-width: $breakpoint-small) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media (min-width: $breakpoint-medium) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: $breakpoint-large) {
-        @content;
-    }
-}
-
 @mixin transition {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -94,4 +59,85 @@ $font-weight-bold: 700;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+
+
+//position
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-row-center {
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-column-center {
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Media query
+@mixin small-only {
+    @media (max-width: $breakpoint-small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $breakpoint-medium) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-large) {
+        @content;
+    }
+}
+
+@export {
+    $yellow,
+    $orange,
+    $orange-dark,
+    $pink,
+    $primary-color,
+    $breakpoint-small,
+    $breakpoint-medium,
+    $breakpoint-large,
+    $spacing-small,
+    $spacing-medium,
+    $spacing-large,
+    $font-size-base,
+    $font-size-large,
+    $font-size-small,
+    $font-family-primary,
+    $line-height-base,
+    $font-weight-bold,
+    transition,
+    box-sizing,
+    text-overflow,
+    flex-row,
+    flex-row-center,
+    flex-column,
+    flex-column-center,
+    flex-center,
+    small-only,
+    tablet,
+    desktop
 }
