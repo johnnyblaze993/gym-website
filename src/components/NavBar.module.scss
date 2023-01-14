@@ -19,6 +19,13 @@
 
         .links {
             @include flex-row;
+
+            .link {
+                @include button($pink-light, $pink-dark, $yellow);
+                padding: $spacing-small;
+                margin-left: $spacing-small;
+            }
+
         }
     }
 
@@ -26,6 +33,14 @@
 
     .right {
         @include flex-row;
+
+        .signin {}
+
+        .register {
+            @include button(#331b0f, $pink, $yellow);
+            padding: $spacing-small;
+            margin-left: $spacing-small;
+        }
 
 
     }
