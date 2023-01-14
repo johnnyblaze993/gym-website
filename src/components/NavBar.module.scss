@@ -1,0 +1,33 @@
+@import '../../src/App.module.scss';
+
+.container {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+    color: $pink-light;
+    background-color: $pink-dark;
+    padding: $spacing-large;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+
+
+    .left {
+        @include flex-row;
+
+        .links {
+            @include flex-row;
+        }
+    }
+
+
+
+    .right {
+        @include flex-row;
+
+
+    }
+
+}

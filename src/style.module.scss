@@ -10,8 +10,9 @@
 $yellow: #FFF9B0;
 $orange: #FFD384;
 $orange-dark: #FF884B;
-$pink: #FF577F;
-$primary-color: #ff9ab2;
+$pink-dark: #FF577F;
+$pink: #ff9ab2;
+$pink-light: #ffdde5;
 
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
@@ -67,6 +68,7 @@ $font-weight-bold: 700;
 @mixin flex-row {
     display: flex;
     flex-direction: row;
+    align-items: center
 }
 
 @mixin flex-row-center {
@@ -93,7 +95,7 @@ $font-weight-bold: 700;
 }
 
 //Media query
-@mixin small-only {
+@mixin mobile {
     @media (max-width: $breakpoint-small) {
         @content;
     }
@@ -111,12 +113,109 @@ $font-weight-bold: 700;
     }
 }
 
+//fluid typography
+@mixin fluid-type($min-width, $max-width, $min-font-size, $max-font-size) {
+    $unit1: unit($min-width);
+    $unit2: unit($max-width);
+    $unit3: unit($min-font-size);
+    $unit4: unit($max-font-size);
+
+    @if $unit1 ==$unit2 and $unit1 ==$unit3 and $unit1 ==$unit4 {
+        & {
+            font-size: $min-font-size;
+            line-height: $min-font-size * 2.3;
+
+            @media screen and (min-width: $min-width) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-width}) / #{strip-unit($max-width - $min-width)}));
+                line-height: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * 1.618 * ((100vw - #{$min-width}) / #{strip-unit($max-width - $min-width)}));
+            }
+
+            @media screen and (min-width: $max-width) {
+                font-size: $max-font-size;
+                line-height: $max-font-size * 2.3;
+            }
+        }
+    }
+}
+
+//buttons
+@mixin button($class: primary) {
+    border: 1.5px solid $primary-color;
+    border-radius: 3px;
+    text-transform: uppercase;
+    @include transition();
+    background: none;
+    text-rendering: optimizeLegibility;
+    cursor: pointer;
+    text-align: center;
+
+    @if $class ==primary {
+        height: 20px;
+        line-height: 17px;
+        font-size: 10px;
+        @include letter-spacing(160, 10px);
+    }
+
+    @else if $class ==big {
+        font-size: 14px;
+        @include flex();
+        @include justify-content();
+        @include align-items();
+        width: fit-content;
+        margin: 0 auto;
+        line-height: 20px;
+        min-height: 28px;
+        padding: 0 10px;
+    }
+
+    &:hover {
+        background: $primary-color;
+        color: $white;
+    }
+}
+
+//animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+
+
+
 @export {
-    $yellow,
+    $yellow: $yellow,
     $orange,
     $orange-dark,
     $pink,
-    $primary-color,
+    $pink-dark,
+    $pink-light,
+
     $breakpoint-small,
     $breakpoint-medium,
     $breakpoint-large,
@@ -139,5 +238,9 @@ $font-weight-bold: 700;
     flex-center,
     small-only,
     tablet,
-    desktop
+    desktop,
+    fluid-type,
+    button,
+    keyframes,
+    animation
 }
