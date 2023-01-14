@@ -1,9 +1,9 @@
-// import React from "react";
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <h1>Input project</h1>
+      <h1>React + TypeScript + Webpack</h1>
     </div>
   );
 }
