@@ -1,0 +1,93 @@
+@import '../../style.module.scss';
+
+.container {
+    width: 100%;
+    height: auto;
+    background-color: $orange;
+    margin-top: 10vh;
+    padding: $spacing-large;
+
+
+    .maintitle {
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, 8rem);
+
+
+    }
+
+    .subtitle {
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, 4rem);
+        font-weight: 300;
+    }
+
+    .text {
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        white-space: normal;
+        text-overflow: unset;
+        overflow: unset;
+    }
+
+    .button {
+        @include button($orange-dark, $yellow, $pink);
+        padding: $spacing-small;
+        margin-left: $spacing-small;
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+        font-weight: 600;
+    }
+
+    .secondaryBtn {
+        @include button($orange-dark, $pink, $yellow);
+        padding: $spacing-small;
+        margin-left: $spacing-small;
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+        font-weight: 600;
+    }
+
+    .imgBox {
+        //fit the whole image on mobile
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+        // object-position: center;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        @include flex-column-center;
+
+
+
+        .img {
+            width: 100%;
+            height: 15rem;
+            //make image 
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            @include tablet {
+                width: 80%;
+                height: 30rem;
+
+            }
+
+            @include desktop {
+                width: 80%;
+                height: 55rem;
+            }
+
+        }
+
+
+
+
+    }
+
+}

@@ -1,9 +1,11 @@
-@import '../../src/App.module.scss';
+// @import '../../App.module.scss';
+@import '../../style.module.scss';
 
 .container {
     @include flex-row;
     justify-content: space-between;
     width: 100%;
+    height: 10vh;
     color: $pink-light;
     background-color: $pink-dark;
     padding: $spacing-large;
@@ -19,6 +21,13 @@
 
         .links {
             @include flex-row;
+            display: none;
+
+            @include tablet {
+                display: flex;
+            }
+
+
 
             .link {
                 @include button($pink-light, $pink-dark, $yellow);
@@ -37,9 +46,11 @@
         .signin {}
 
         .register {
-            @include button(#331b0f, $pink, $yellow);
+            @include button($orange-dark, $pink, $yellow);
             padding: $spacing-small;
             margin-left: $spacing-small;
+            @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+            font-weight: 600;
         }
 
 

@@ -25,7 +25,7 @@ $spacing-large: 24px;
 
 $font-size-base: 16px;
 $font-size-large: 24px;
-$font-size-small: 14px;
+$font-size-small: 12px;
 $font-family-primary: 'Roboto',
     -apple-system,
     BlinkMacSystemFont,
@@ -62,8 +62,6 @@ $font-weight-bold: 700;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
-
 
 //position
 @mixin flex-row {
@@ -124,7 +122,7 @@ $font-weight-bold: 700;
     @if $unit1 ==$unit2 and $unit1 ==$unit3 and $unit1 ==$unit4 {
         & {
             font-size: $min-font-size;
-            line-height: $min-font-size * 2.3;
+            line-height: $min-font-size * 2;
 
             @media screen and (min-width: $min-width) {
                 font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-width}) / #{strip-unit($max-width - $min-width)}));
@@ -133,7 +131,7 @@ $font-weight-bold: 700;
 
             @media screen and (min-width: $max-width) {
                 font-size: $max-font-size;
-                line-height: $max-font-size * 2.3;
+                line-height: $max-font-size * 2;
             }
         }
     }

@@ -3,7 +3,7 @@
 * {
     @include box-sizing;
     @include transition;
-    @include text-overflow;
+
     padding: 0;
     margin: 0;
 
@@ -12,13 +12,13 @@
 .App {
     @include box-sizing;
     @include transition;
-    @include text-overflow;
+
     font-family: $font-family-primary;
     @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-large);
 
     color: $orange-dark;
     background-color: $yellow;
-    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

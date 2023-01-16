@@ -1,12 +1,12 @@
-import React from "react";
 import styles from "./App.module.scss";
-import NavBar from "./components/NavBar";
+import Hero from "./components/hero/Hero";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      <h1>React + TypeScript + Webpack</h1>
+      <Hero />
     </div>
   );
 }
