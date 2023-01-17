@@ -8,7 +8,7 @@ const Card: React.FC<CardProps> = ({ children }: CardProps) => {
   const classes =
     styles.card + (children ? " " + styles["card--with-children"] : "");
 
-  return <div className={classes}>{children}</div>;
+  return <div className={`${classes}`}>{children}</div>;
 };
 
 export default Card;
