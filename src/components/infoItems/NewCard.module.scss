@@ -1,0 +1,39 @@
+@import '../../style.module.scss';
+
+.card {
+    border: 1px solid $orange-dark;
+    width: 100%;
+    padding: $spacing-large;
+    border-radius: 5px;
+    @include flex-column-center;
+    text-align: center;
+
+
+    .icon {
+        background-color: $orange;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include flex-center;
+        border: 1px solid $orange-dark;
+    }
+
+
+
+    .content {}
+
+
+
+    .title {}
+
+
+    .text {}
+
+    .button {
+        @include button($orange-dark, $yellow, $pink);
+        padding: $spacing-small;
+        margin-left: $spacing-small;
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+        font-weight: 600;
+    }
+}

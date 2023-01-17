@@ -1,0 +1,8 @@
+@import '../../style.module.scss';
+
+.container {
+    @include flex-column-center;
+    width: 100%;
+    gap: $spacing-large;
+
+}

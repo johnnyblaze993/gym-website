@@ -1,0 +1,12 @@
+@import '../../style.module.scss';
+
+
+.container {
+    @include flex-column;
+    width: 100%;
+    height: auto;
+    gap: $spacing-large;
+    padding: $spacing-large;
+    background-color: $pink-light;
+
+}

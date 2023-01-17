@@ -6,10 +6,10 @@
     justify-content: space-between;
     width: 100%;
     height: 10vh;
-    color: $pink-light;
-    background-color: $pink-dark;
+    color: $orange-dark;
+    background-color: $pink-light;
     padding: $spacing-large;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
@@ -30,9 +30,10 @@
 
 
             .link {
-                @include button($pink-light, $pink-dark, $yellow);
+                @include button($orange-dark, $yellow, $yellow);
                 padding: $spacing-small;
                 margin-left: $spacing-small;
+                font-weight: 600
             }
 
         }
