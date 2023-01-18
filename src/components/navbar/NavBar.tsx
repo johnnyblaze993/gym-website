@@ -1,5 +1,6 @@
 import { SportsGymnastics } from "@mui/icons-material";
 import styles from "./NavBar.module.scss";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const NavBar = () => {
   return (
@@ -9,14 +10,54 @@ const NavBar = () => {
           <SportsGymnastics />
         </div>
         <div className={styles.links}>
-          <button className={styles.link}>Our Plans</button>
-          <button className={styles.link}>Bootcamps</button>
-          <button className={styles.link}>Hours</button>
+          <Link
+            className={styles.link}
+            activeClass="active"
+            to="info"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
+            Info
+          </Link>
+          <Link
+            className={styles.link}
+            activeClass="active"
+            to="goals"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            Goals
+          </Link>
+          <Link
+            className={styles.link}
+            activeClass="active"
+            to="classes"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
+            Bootcamps
+          </Link>
         </div>
       </div>
       <div className={styles.right}>
-        <div className={styles.signin}>Sign in</div>
-        <button className={styles.register}>Become a member</button>
+        <div>Sign in</div>
+        <Link
+          className={styles.register}
+          activeClass="join"
+          to="classes"
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
+        >
+          Become a member
+        </Link>
       </div>
       <select className={styles.select}>
         <option value="Our Plans">Our Plans</option>
