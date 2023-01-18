@@ -3,7 +3,7 @@ import styles from "./GymInfo.module.scss";
 
 const GymInfo = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="info">
       <div>
         <h1 className={styles.title}>Our Gym</h1>
         <p className={styles.text}>

@@ -3,7 +3,7 @@ import styles from "./Join.module.scss";
 
 const Join = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="join">
       <div className={styles.content}>
         <h1 className={styles.title}>
           {" "}

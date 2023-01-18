@@ -2,7 +2,7 @@ import styles from "./Classes.module.scss";
 
 const Classes = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="classes">
       <div className={styles.content}>
         <h1 className={styles.title}>Blaze Bootcamps</h1>
         <p className={styles.text}>

@@ -10,7 +10,7 @@ const Goals = () => {
           alt="goals"
         />
       </div>
-      <div className={styles.content}>
+      <div className={styles.content} id="goals">
         <h1 className={styles.title}>
           Reach your <span>goals</span> !
         </h1>
