@@ -1,0 +1,8 @@
+@import '../../style.module.scss';
+
+.container {
+    height: 3vh;
+    width: 100%;
+    @include bg-color(#ffe0a9);
+
+}

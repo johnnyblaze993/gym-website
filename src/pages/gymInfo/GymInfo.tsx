@@ -1,4 +1,3 @@
-import React from "react";
 import InfoItems from "../../components/infoItems/InfoItems";
 import styles from "./GymInfo.module.scss";
 

@@ -41,6 +41,10 @@ $font-family-primary: 'Roboto',
 $line-height-base: 1.5;
 $font-weight-bold: 700;
 
+@mixin bg-color($color) {
+    background-color: $color;
+}
+
 
 @mixin transition {
     -webkit-transition: all 0.3s ease-in-out;
@@ -208,6 +212,8 @@ $font-weight-bold: 700;
     $pink-dark,
     $pink-light,
 
+
+
     $breakpoint-small,
     $breakpoint-medium,
     $breakpoint-large,
@@ -235,4 +241,5 @@ $font-weight-bold: 700;
     button,
     keyframes,
     animation,
+    bg-color
 }

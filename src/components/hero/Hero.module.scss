@@ -3,7 +3,7 @@
 .container {
     width: 100%;
     height: auto;
-    background-color: $orange-light;
+    background-color: #ffedce;
     margin-top: 10vh;
     padding: $spacing-large;
 
@@ -45,11 +45,10 @@
     }
 
     .imgBox {
-        //fit the whole image on mobile
+
         width: 100%;
         height: 100%;
-        // object-fit: cover;
-        // object-position: center;
+
         margin-top: 3vh;
         margin-bottom: 3vh;
         @include flex-column-center;
@@ -58,30 +57,27 @@
 
         .img {
             width: 100%;
-            height: 15rem;
-            //make image 
+            height: 60%;
             object-fit: cover;
             object-position: center;
 
             border-radius: 10px;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease-in-out;
-            cursor: pointer;
 
-            &:hover {
-                transform: scale(1.05);
-            }
 
-            @include tablet {
-                width: 80%;
-                height: 30rem;
 
-            }
 
-            @include desktop {
-                width: 80%;
-                height: 55rem;
-            }
+            // @include tablet {
+            //     width: 80%;
+            //     height: 30rem;
+
+            // }
+
+            // @include desktop {
+            //     width: 80%;
+            //     height: 55rem;
+            // }
 
         }
 

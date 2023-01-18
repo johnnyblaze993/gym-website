@@ -7,6 +7,9 @@
     border-radius: 5px;
     @include flex-column-center;
     text-align: center;
+    //padding top and bottom
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 
 
     .icon {

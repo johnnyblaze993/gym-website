@@ -44,6 +44,12 @@
     .right {
         @include flex-row;
 
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
+
         .signin {}
 
         .register {
@@ -56,5 +62,43 @@
 
 
     }
+
+    .logo {
+        @include fluid-type($breakpoint-small, $breakpoint-large, $font-size-small, $font-size-base);
+        font-weight: 600;
+        background-color: $orange;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        @include flex-center;
+
+    }
+
+    .select {
+        @include button($orange-dark, $yellow, $yellow);
+        padding: $spacing-small;
+        font-weight: 600;
+        width: 40%;
+
+        //on focus  remove border
+        &:focus {
+            outline: none;
+        }
+
+
+
+        @include tablet {
+            display: none;
+        }
+
+
+
+    }
+
+
+
+
+
+
 
 }
