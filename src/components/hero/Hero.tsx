@@ -1,5 +1,5 @@
 import styles from "./Hero.module.scss";
-// import Card from "../card/Card";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 //className={styles.}
 const mobile = 576;
@@ -16,8 +16,28 @@ const Hero = () => {
         your overall health and wellness, Blaze Fitness has everything you need
         to reach your full potential.
       </p>
-      <button className={styles.button}>Bring the heat</button>
-      <button className={styles.secondaryBtn}>More info</button>
+      <Link
+        className={styles.button}
+        activeClass="active"
+        to="classes"
+        spy={true}
+        smooth={true}
+        offset={-80}
+        duration={500}
+      >
+        Bring the heat
+      </Link>
+      <Link
+        className={styles.secondaryBtn}
+        activeClass="active"
+        to="info"
+        spy={true}
+        smooth={true}
+        offset={-80}
+        duration={500}
+      >
+        More info
+      </Link>
 
       <div className={styles.imgBox}>
         <img

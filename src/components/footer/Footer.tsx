@@ -1,4 +1,5 @@
 import styles from "./Footer.module.scss";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -16,19 +17,45 @@ const Footer = () => {
         <ul className={styles.links}>
           <h4>Links</h4>
           <li>
-            <a className={styles.link} href="#">
+            <Link
+              className={styles.link}
+              href="#"
+              to="info"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+            >
               Fitness Tips
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles.link} href="#">
+            <Link
+              className={styles.link}
+              href="#"
+              activeClass="active"
+              to="classes"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+            >
               Exercise Programs
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles.link} href="#">
+            <Link
+              className={styles.link}
+              href="#"
+              activeClass="active"
+              to="join"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+            >
               Nutrition Guides
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

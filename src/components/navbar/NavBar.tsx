@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={() => scroll.scrollToTop()}>
           <SportsGymnastics />
         </div>
         <div className={styles.links}>
@@ -49,8 +49,8 @@ const NavBar = () => {
         <div>Sign in</div>
         <Link
           className={styles.register}
-          activeClass="join"
-          to="classes"
+          activeClass="active"
+          to="join"
           spy={true}
           smooth={true}
           offset={-80}
